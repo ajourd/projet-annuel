@@ -1,0 +1,35 @@
+title { 
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+ul a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul a:hover:not(.active) {
+  background-color: rgb(223, 223, 223);
+}
+
+.active {
+  background-color: #e5e5e5;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+audio {
+  padding-left:40%;
+}
