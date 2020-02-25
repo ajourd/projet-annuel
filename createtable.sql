@@ -44,7 +44,6 @@ create table `utilisateur`(
 `pseudo` varchar(50) not null unique,
 `nom` varchar(50) not null,
 `prenom` varchar(50) not null,
-`age` integer not null,
 `mdp` varchar(50) not null,
 `admin` boolean null
 );

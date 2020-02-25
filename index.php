@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="title">
+<div class="titre">
 <h1> SOUND HAZE </h1>
 <!-- SEARCH BAR -->
 <buttom class="buttom"><a href="connecter.php">Connexion</a></buttom>
@@ -17,7 +17,7 @@
 </div>
 
 
-  <div class="menu">
+  <div class="menu"><!-- ces options ne sont accessibles seulement après connexion sur le site --> 
   <button class="buttom"><a href="#">Mes musiques</a></buttom>
   <button class="buttom"><a href="#">Mes playlists</a></buttom>
   <button class="buttom"><a href="#">Mon compte</a></buttom>
