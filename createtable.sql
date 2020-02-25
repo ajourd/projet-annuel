@@ -7,7 +7,7 @@ drop table if exists `contient`;
 
 
 create table `musique`(
-`id_musique` int primary key,
+`id_musique` int primary key not null auto_increment,
 `titre` varchar(100) not null,
 `artiste` varchar(50) not null,
 `album` varchar(50) not null,
@@ -40,7 +40,7 @@ insert into `musique` (`id_musique`, `titre`, `artiste`, `album`, `genre`, `lien
 
 
 create table `utilisateur`(
-`id_uti` int primary key,
+`id_uti` int primary key not null auto_increment,
 `pseudo` varchar(50) not null unique,
 `nom` varchar(50) not null,
 `prenom` varchar(50) not null,
@@ -50,12 +50,12 @@ create table `utilisateur`(
 
 
 create table `playlist`(
-`id_playlist` int primary key,
+`id_playlist` int primary key not null auto_increment,
 `nom_playlist` varchar(50) not null
 );
 
 create table `enregistre`(
-    `id_enr` int PRIMARY key,
+    `id_enr` int PRIMARY key not null auto_increment,
     `id_uti` int not null,
     `id_playlist` int not null,
     foreign key (`id_uti`) references `utilisateur`(`id_uti`),
@@ -63,7 +63,7 @@ create table `enregistre`(
 
 
 create table `contient` (
-    `id_contient` int PRIMARY key,
+    `id_contient` int PRIMARY key not null auto_increment,
     `id_playlist` int not null, 
     `id_musique` int not null,
     foreign key (`id_playlist`) references `playlist`(`id_playlist`),

@@ -1,15 +1,14 @@
-<?php 
-include ("connexionbdd.php");
+<?php
 $error=NULL;
-if (isset($_GET['error'])) $error==$_GET['error'];
+if (isset($_GET["error"])) $error=$_GET['error'];
 { 
   if ($error==1) {
-    $error="un probleme est survenu lors de l'inscritpion";
+    $error="un probleme est survenu lors de l'inscription";
   }
-  if ($error==2) {
-    $error="Tous les champs doivent être renseignés";
+  elseif ($error==2) {
+    $error="Tous les champs doivent être renseignes";
   }
-  if ($error==3) {
+  elseif ($error==3) {
     $error="Le pseudo existe deja";
   }
 }
@@ -18,8 +17,16 @@ if (isset($_GET['error'])) $error==$_GET['error'];
 <head>
   <title>Inscription - SOUNDHAZE</title>
   <meta charset="UTF-8">
-	<link rel="stylesheet" href="style2.css"></head>
+	<link rel="stylesheet" href="styles.css"></head>
 <body>
+<span>
+<?php 
+if (isset($error))
+{
+  echo $error;
+}
+?>
+</span>
 <h1><a href=index.php> SOUND HAZE </a></h1>
 <form action="inscript.php" method="post">
 Votre Nom :

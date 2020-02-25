@@ -27,7 +27,7 @@ else{
     }
     else 
     {
-        $requete2="INSERT INTO `utilisateur` (`id_uti`, `pseudo`, `nom`, `prenom`, `mdp`, `admin`) VALUES (NULL, '$pseudo', '$nom', '$prenom', '$mdp', NULL)";
+        $requete2="INSERT INTO `utilisateur` (`pseudo`, `nom`, `prenom`, `mdp`, `admin`) VALUES ('$pseudo', '$nom', '$prenom', '$mdp', '1')";
         $result2=$bdd->query($requete2);
         if ($result2)
         {
@@ -36,11 +36,11 @@ else{
             <head>
                 <title>Compte - SOUNDHAZE</title>
                 <meta charset="UTF-8">
-	            <link rel="stylesheet" href="style2.css"></head>
+	            <link rel="stylesheet" href="styles.css"></head>
             <body>
             <h1><a href=index.php> SOUND HAZE </a></h1>
-            <h2> compte bien crée </h2>
-            <META http-equiv="refresh" content="0.1; URL=./index.php">;
+            <center> Votre compte a bien été créé </center>
+            <META http-equiv="refresh" content="1.0; URL=./index.php">;
             </body>
             </html>
             <?php
@@ -54,7 +54,7 @@ else{
 if ($error==1)
 {
     ?>
-    <META http-equiv="refresh" content="0.1; URL=./inscrire.php?&error=<?php echo $error;?>">
+    <META http-equiv="refresh" content="1.0; URL=./inscrire.php?&error=<?php echo $error;?>">
     <?php
 }
 ?>
