@@ -1,26 +1,39 @@
 <!doctype html>
 <html>
 <?php
-	include ("connexionbdd.php");
+  include ("connexionbdd.php");
+  $statut=isset($_SESSION['mdp']) ? $_SESSION['mdp'] : NULL;
+  $id_uti=isset($_SESSION['id_uti']) ? $_SESSION['id_uti'] : NULL;
+  $pseudo=isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : NULL;
 ?>
+
 <head> 
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="titre">
 <h1> SOUND HAZE </h1>
 <!-- SEARCH BAR -->
-<buttom class="buttom"><a href="connecter.php">Connexion</a></buttom>
-<button class="buttom"><a href="inscrire.php">inscription</a></buttom>
+<button class="button"><a href="connecter.php">Connexion</a></button>
+<button class="button"><a href="inscrire.php">inscription</a></button>
+<?php
+if ($statut==true)
+{
+  ?>
+  <p>Bienvenue <?php echo $_SESSION['prenom'].' '.$_SESSION['nom'];?> </p>
+  <button><a href="deconnecter.php">Deconnexion</a></button>
+  <?php
+}
+?>
 </div>
 
 
   <div class="menu"><!-- ces options ne sont accessibles seulement après connexion sur le site --> 
-  <button class="buttom"><a href="#">Mes musiques</a></buttom>
-  <button class="buttom"><a href="#">Mes playlists</a></buttom>
-  <button class="buttom"><a href="#">Mon compte</a></buttom>
+  <button><a href="#">Mes musiques</a></button>
+  <button><a href="#">Mes playlists</a></button>
+  <button><a href="#">Mon compte</a></button>
   </div>
 
   <div class="main">

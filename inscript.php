@@ -54,7 +54,7 @@ else{
 if ($error==1)
 {
     ?>
-    <META http-equiv="refresh" content="1.0; URL=./inscrire.php?&error=<?php echo $error;?>">
+    <META http-equiv="refresh" content="0.1; URL=./inscrire.php?&error=<?php echo $error;?>">
     <?php
 }
 ?>

@@ -1,9 +1,10 @@
 <?php
+include ("connexionbdd.php");
 $error=NULL;
 if (isset($_GET["error"])) $error=$_GET['error'];
 { 
   if ($error==1) {
-    $error="un probleme est survenu lors de l'inscription";
+    $error="un probleme est survenu lors de votre inscription";
   }
   elseif ($error==2) {
     $error="Tous les champs doivent être renseignes";
@@ -39,6 +40,6 @@ Votre Mot de Passe :
 <input type="password" name="password" required>
 <input class="button" type="submit" name="valider" value="S'inscrire">
 </form>
-<buttom class="buttom"><a href="connecter.php">Connexion</a></buttom>
+<button class="button"><a href="connecter.php">Connexion</a></button>
 </body>
 </html>
