@@ -1,5 +1,5 @@
 <?php
-include ("connexionbdd.php");
+include("connexionbdd.php");
 $error=NULL;
 if (isset($_GET["error"])) $error=$_GET['error'];
 { 

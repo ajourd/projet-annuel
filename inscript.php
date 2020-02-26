@@ -1,5 +1,5 @@
 <?php 
-include ("connexionbdd.php");
+include("connexionbdd.php");
 $error=$nom=$prenom=$pseudo=$mdp='';
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom'] : NULL;

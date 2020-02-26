@@ -2,9 +2,6 @@
 <html>
 <?php
   include("connexionbdd.php");
-  $statut=isset($_SESSION['mdp']) ? $_SESSION['mdp'] : NULL;
-  $id_uti=isset($_SESSION['id_uti']) ? $_SESSION['id_uti'] : NULL;
-  $pseudo=isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : NULL;
 ?>
 
 <head> 
@@ -18,16 +15,7 @@
 <!-- SEARCH BAR -->
 <button class="button"><a href="connecter.php">Connexion</a></button>
 <button class="button"><a href="inscrire.php">inscription</a></button>
-<button><a href="deconnect.php">Deconnexion</a></button>
 
-<?php
-if ($statut==true)
-{
-  ?>
-  <p>Bienvenue <?php echo $_SESSION['prenom'].' '.$_SESSION['nom'];?> </p>
-  <?php
-}
-?>
 </div>
 
 

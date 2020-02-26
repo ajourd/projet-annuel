@@ -27,6 +27,13 @@
       </ul>
       <?php
   }
+else
+  {
+    ?> <h1>Session expirée</h1>
+        <center><a href=index.php>Retour à l'accueil</a></center>
+
+    <?php
+}
 ?>
 
 

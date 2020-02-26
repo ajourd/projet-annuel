@@ -1,11 +1,10 @@
+<?php
+    session_start();
+    $statut=(isset($_SESSION['login'])) ? $_SESSION["login"] : NULL;
+?>
 <!doctype html>
 <html>
-<?php
-  require_once("connexionbdd.php");
-  $statut=isset($_SESSION['login']) ? $_SESSION['login'] : NULL;
-  $id_uti=isset($_SESSION['id_uti']) ? $_SESSION['id_uti'] : NULL;
-  $pseudo=isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : NULL;
-?>
+
 
 <head> 
 	<meta charset="UTF-8">
@@ -19,34 +18,35 @@
 <button class="button"><a href="connecter.php">Connexion</a></button>
 <button class="button"><a href="inscrire.php">inscription</a></button>
 <button><a href="deconnect.php">Deconnexion</a></button>
-
-<?php
-if ($statut==true)
-{
+<i> le statut de la connexion : <?php echo $statut; ?> </i> <!--test de la connexion-->
+  <?php
+  if ($statut==true)
+    {
   ?>
-  <p>Bienvenue <?php echo $_SESSION['prenom'].' '.$_SESSION['nom'];?> </p>
+  
+    <p>Bienvenue <?php echo $_SESSION['prenom'].' '.$_SESSION['nom'];?> </p>
 
-</div>
+    </div>
 
 
-  <div class="menu"><!-- ces options ne sont accessibles seulement après connexion sur le site --> 
-  <button><a href="#">Mes musiques</a></button>
-  <button><a href="#">Mes playlists</a></button>
-  <button><a href="compte.php">Mon compte</a></button>
-  </div>
+    <div class="menu"><!-- ces options ne sont accessibles seulement après connexion sur le site --> 
+    <button><a href="#">Mes musiques</a></button>
+    <button><a href="#">Mes playlists</a></button>
+    <button><a href="compte.php">Mon compte</a></button>
+    </div>
 
-  <div class="main">
+    <div class="main">
     <h2>Bienvenue</h2>
     <p>Ecoutez des musiques, téléchargez les pour y avoir accès à n'importe quel moment et à n'importe quel endroit. Créez vos playlists.</p>
-  </div>
+   </div>
 
 
-<ul>
-  <a class="active"></a><audio controls></audio></a>
-</ul>
-<?php
-}
-else {
+    <ul>
+   <a class="active"></a><audio controls></audio></a>
+   </ul>
+    <?php
+  }
+  else {
     ?> <h1>Session expirée</h1>
         <center><a href=index.php>Retour à l'accueil</a></center>
 
@@ -55,3 +55,5 @@ else {
 ?>
 </body>
 </html>
+<?php
+?>

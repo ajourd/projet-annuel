@@ -1,5 +1,5 @@
 <?php 
-include ("connexionbdd.php");
+require_once("connexionbdd.php");
 $error=$pseudo=$mdp='';
 
 $pseudo=(isset($_POST['pseudo'])) ? $_POST['pseudo']:NULL;
