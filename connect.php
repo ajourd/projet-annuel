@@ -15,7 +15,9 @@ if ($resultCo -> rowCount()>0)
     $_SESSION['pseudo'] = $donnees['pseudo'];
     $_SESSION['mdp'] = $donnees['mdp'];
     $_SESSION['id_uti'] = $donnees['id_uti'];
-    header('LOCATION: index.php');
+    $_SESSION['login'] = true; 
+    header('LOCATION: accueil.php');
+
 }
 else {
     $error=1;

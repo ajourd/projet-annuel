@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <?php
-  include("connexionbdd.php");
-  $statut=isset($_SESSION['mdp']) ? $_SESSION['mdp'] : NULL;
+  require_once("connexionbdd.php");
+  $statut=isset($_SESSION['login']) ? $_SESSION['login'] : NULL;
   $id_uti=isset($_SESSION['id_uti']) ? $_SESSION['id_uti'] : NULL;
   $pseudo=isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : NULL;
 ?>
@@ -25,9 +25,7 @@ if ($statut==true)
 {
   ?>
   <p>Bienvenue <?php echo $_SESSION['prenom'].' '.$_SESSION['nom'];?> </p>
-  <?php
-}
-?>
+
 </div>
 
 
@@ -46,5 +44,14 @@ if ($statut==true)
 <ul>
   <a class="active"></a><audio controls></audio></a>
 </ul>
+<?php
+}
+else {
+    ?> <h1>Session expirée</h1>
+        <center><a href=index.php>Retour à l'accueil</a></center>
+
+    <?php
+}
+?>
 </body>
 </html>
